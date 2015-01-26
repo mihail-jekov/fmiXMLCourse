@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE aircraft-carrier
+[
+<!ELEMENT aircraft-carrier (name, personel, aircrafts, missions)>
+  <!ELEMENT name (#PCDATA)>
+  <!ATTLIST aircraft-carrier engine (nuclear|diesel) "nuclear">
+  <!ATTLIST aircraft-carrier class CDATA #REQUIRED>
+  <!ATTLIST aircraft-carrier years-of-service CDATA #IMPLIED>
+  <!ELEMENT personel (soldier+)>
+    <!ELEMENT soldier (first-name, last-name, gender, position, age, religion)>
+      <!ATTLIST soldier id ID #REQUIRED
+						aircraft IDREFS #IMPLIED
+						mission IDREFS #IMPLIED>
+	  <!ELEMENT first-name (#PCDATA)>
+	  <!ELEMENT last-name (#PCDATA)>
+      <!ELEMENT gender (#PCDATA)>
+	  <!ELEMENT position (#PCDATA)>
+	  <!ELEMENT age (#PCDATA)>
+	  <!ELEMENT religion (#PCDATA)>
+  <!ELEMENT aircrafts (aircraft+)>
+    <!ELEMENT aircraft (model, manufacturer, cost, range)>
+	  <!ATTLIST aircraft id ID #REQUIRED>
+	  <!ATTLIST aircraft control (pilot|auto-pilot) #REQUIRED>
+	  <!ATTLIST aircraft role (fighter|bomber|multirole|reconnaissance) #REQUIRED>
+      <!ELEMENT model (#PCDATA)>
+	  <!ELEMENT manufacturer (manufacturer-name, established, staff-count, profit)>
+	    <!ELEMENT manufacturer-name (#PCDATA)>
+	    <!ELEMENT established (#PCDATA)>
+	    <!ELEMENT staff-count (#PCDATA)>
+        <!ELEMENT profit (#PCDATA)>
+      <!ELEMENT range (#PCDATA)>
+	  <!ELEMENT cost (#PCDATA)>
+  <!ELEMENT missions (mission*)>
+    <!ELEMENT mission (code-name, countries, duration, resources-used, units-lost)>
+	  <!ATTLIST mission id ID #REQUIRED>
+      <!ELEMENT code-name (#PCDATA)>
+      <!ELEMENT countries (country+)>
+        <!ELEMENT country (country-name, population)>
+		  <!ATTLIST country continent (europe|asia|north-america|south-america|africa|antarctica) #IMPLIED>
+          <!ELEMENT country-name (#PCDATA)>
+		  <!ELEMENT population (#PCDATA)>
+      <!ELEMENT duration (#PCDATA)>
+	  <!ELEMENT resources-used (#PCDATA)>
+	  <!ELEMENT units-lost (#PCDATA)>
+]>
+
+<aircraft-carrier engine = "diesel" class = "Shōkaku-class" years-of-service = "1941-1944">
+	<name>Shōkaku</name>
+	<personel>
+		<soldier id = "s1" aircraft = "a1">
+			<first-name>Takijiro</first-name>
+			<last-name>Ohnishi</last-name>
+			<gender>male</gender>
+			<position>General</position>
+			<age>36</age>
+			<religion>Shinto</religion>
+		</soldier>
+	</personel>
+	<aircrafts>
+		<aircraft id = "a1" control = "pilot" role = "fighter">
+			<model>Mitsubishi A6M Zero</model>
+			<manufacturer>
+				<manufacturer-name>Mitsubishi Heavy Industries</manufacturer-name>
+				<established>1914</established>
+				<staff-count>63500</staff-count>
+				<profit>US$ 0.30 billion</profit>
+			</manufacturer>
+			<cost>200000 USD</cost>
+			<range>2600 km</range>
+		</aircraft>
+		<aircraft id = "a2" control = "pilot" role = "bomber">
+			<model>Aichi D3A</model>
+			<manufacturer>
+				<manufacturer-name>Aichi Aircraft Company</manufacturer-name>
+				<established>1898</established>
+				<staff-count>4000</staff-count>
+				<profit>US$ 300 million</profit>
+			</manufacturer>
+			<cost>200000 USD</cost>
+			<range>1472 km</range>
+		</aircraft>
+		<aircraft id = "a3" control = "pilot" role = "bomber">
+			<model>Nakajima B5N</model>
+			<manufacturer>
+				<manufacturer-name>Nakajima Aircraft Company</manufacturer-name>
+				<established>1918</established>
+				<staff-count>4000</staff-count>
+				<profit>US$ 300 million</profit>
+			</manufacturer>
+			<cost>220000 USD</cost>
+			<range>1992 km</range>
+		</aircraft>
+	</aircrafts>
+	<missions>
+		
+	</missions>
+</aircraft-carrier>
