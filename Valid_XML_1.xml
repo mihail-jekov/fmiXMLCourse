@@ -1,49 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<!DOCTYPE aircraft-carrier
-[
-<!ELEMENT aircraft-carrier (name, personel, aircrafts, missions)>
-  <!ELEMENT name (#PCDATA)>
-  <!ATTLIST aircraft-carrier engine (nuclear|diesel) "nuclear">
-  <!ATTLIST aircraft-carrier class CDATA #REQUIRED>
-  <!ATTLIST aircraft-carrier years-of-service CDATA #IMPLIED>
-  <!ELEMENT personel (soldier+)>
-    <!ELEMENT soldier (first-name, last-name, gender, position, age, religion)>
-      <!ATTLIST soldier id ID #REQUIRED
-						aircraft IDREFS #IMPLIED
-						mission IDREFS #IMPLIED>
-	  <!ELEMENT first-name (#PCDATA)>
-	  <!ELEMENT last-name (#PCDATA)>
-      <!ELEMENT gender (#PCDATA)>
-	  <!ELEMENT position (#PCDATA)>
-	  <!ELEMENT age (#PCDATA)>
-	  <!ELEMENT religion (#PCDATA)>
-  <!ELEMENT aircrafts (aircraft+)>
-    <!ELEMENT aircraft (model, manufacturer, cost, range)>
-	  <!ATTLIST aircraft id ID #REQUIRED>
-	  <!ATTLIST aircraft control (pilot|auto-pilot) #REQUIRED>
-	  <!ATTLIST aircraft role (fighter|bomber|multirole|reconnaissance) #REQUIRED>
-      <!ELEMENT model (#PCDATA)>
-	  <!ELEMENT manufacturer (manufacturer-name, established, staff-count, profit)>
-	    <!ELEMENT manufacturer-name (#PCDATA)>
-	    <!ELEMENT established (#PCDATA)>
-	    <!ELEMENT staff-count (#PCDATA)>
-        <!ELEMENT profit (#PCDATA)>
-      <!ELEMENT range (#PCDATA)>
-	  <!ELEMENT cost (#PCDATA)>
-  <!ELEMENT missions (mission*)>
-    <!ELEMENT mission (code-name, countries, duration, resources-used, units-lost)>
-	  <!ATTLIST mission id ID #REQUIRED>
-      <!ELEMENT code-name (#PCDATA)>
-      <!ELEMENT countries (country+)>
-        <!ELEMENT country (country-name, population)>
-		  <!ATTLIST country continent (europe|asia|north-america|south-america|africa|antarctica) #IMPLIED>
-          <!ELEMENT country-name (#PCDATA)>
-		  <!ELEMENT population (#PCDATA)>
-      <!ELEMENT duration (#PCDATA)>
-	  <!ELEMENT resources-used (#PCDATA)>
-	  <!ELEMENT units-lost (#PCDATA)>
-]>
+<!DOCTYPE aircraft-carrier SYSTEM "AircraftCarrier.dtd">
+<?xml-stylesheet type="text/xsl" href="HTML_Transformation_1.xsl"?>
 
 <aircraft-carrier engine = "diesel" class = "Shōkaku-class" years-of-service = "1941-1944">
 	<name>Shōkaku</name>
