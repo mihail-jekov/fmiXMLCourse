@@ -3,7 +3,8 @@
 DEF Brick Transform {
 	children [
 		Transform {
-			translation 0.0 1.4 0.0
+			translation 0.0 0.0 1.25
+			rotation	1.0 0.0 0.0 1.57
 			children [
 				DEF Side Group {
 					children [
@@ -13,8 +14,7 @@ DEF Brick Transform {
 								DEF QuarterTube Shape {
 									appearance DEF shapeColor Appearance {
 										material Material {
-										#	transparency 0.5
-											diffuseColor 1 1 1
+											diffuseColor 0 0.6 0
 										}
 									}
 									geometry Extrusion {
@@ -70,41 +70,110 @@ DEF Brick Transform {
 				}
 			]
 		}
-
+		
 		Transform {
-			translation 0.0 -1.4 0.0
-			rotation	0.0 0.0 1.0 -3.1415
+			translation 1.45 0 0
+			children DEF Side Shape {
+				appearance USE shapeColor
+				geometry Box {
+					size 0.1 3.0 2.5
+				}
+			}
+		}
+		
+		Transform {
+			translation -1.45 0 0
 			children USE Side
 		}
-
+		
 		Transform {
-			translation 1.4 0.0 0.0
-			rotation	0.0 0.0 1.0 -1.5707
-			children USE Side
+			translation 0.0 1.45 0.0
+			children Shape {
+				appearance USE shapeColor
+				geometry Box {
+					size 3.0 0.1 2.5
+				}
+			}
 		}
-
+		
 		Transform {
-			translation -1.4 0.0 0.0
-			rotation	0.0 0.0 1.0 1.5707
-			children USE Side
+			translation 0.0 1.70 0.3
+			children [
+				Shape {
+					appearance USE shapeColor
+					geometry Cylinder {
+						radius 1.0
+						height 0.5
+					}
+				}
+				Transform {
+					translation 0.0 0.31 0.1
+					rotation 1.0 0.0 0.0 4.71
+					children Shape {
+						appearance DEF textColor Appearance {
+							material Material {
+								diffuseColor 1 0.6 1
+							}
+						}
+						geometry Text {
+							string ["LEGO"]
+							fontStyle FontStyle {
+								justify "MIDDLE"
+								size 0.5
+							}
+						}
+					}
+				}
+			]
 		}
-
+		
 		Transform {
-			translation 0.0 0.0 1.4
-			rotation	1.0 0.0 0.0 1.5707
-			children USE Side
+			translation 0 0 -0.55
+			rotation 1 0 0 4.71
+			children DEF BackSide Group {
+				children [
+					Shape {
+						appearance USE shapeColor
+						geometry Extrusion {
+							creaseAngle 1.5707
+							convex FALSE
+							crossSection [
+								-1.500  1.500,	1.500  1.500,
+								 1.500 -0.850,  0.850 -0.850,
+								 0.850  0.850, -0.850  0.850,
+								-0.850 -0.850, -1.500 -0.850,
+								-1.500  1.500
+							]
+							spine [
+								0.000 0.000 0.000
+								0.000 0.700 0.000
+							]
+						}
+					}
+					Transform {
+						translation 0.0 0.350 -1.20
+						children Shape {
+							appearance USE shapeColor
+							geometry Box {
+								size 3.0 0.7 1.1
+							}
+						}
+					}
+				]
+			}
 		}
-
+		
 		Transform {
-			translation 0.0 0.0 -1.4
-			rotation	1.0 0.0 0.0 -1.5707
-			children USE Side
+			translation 0.0 -1.25 0.3
+			rotation 1.0 0.0 0.0 3.14
+			scale 1.0 0.7 1.0
+			children USE BackSide
 		}
 	]
 }
 
 Transform {
-	translation -7.0 -5.0 0.0
+	translation -3.0 0.0 8.0
 	children [
 		DEF button Shape {
 			appearance Appearance {
@@ -113,11 +182,11 @@ Transform {
 				}
 			}
 			geometry Box {
-				size 5.0 2.0 0.0
+				size 2.0 0.7 0.0
 			}
 		}
 		Transform {
-			translation 0.0 0.0 0.01
+			translation 0.0 -0.2 0.01
 			children Shape {
 				appearance DEF textColor Appearance {
 					material Material {
@@ -126,8 +195,9 @@ Transform {
 				}
 				geometry Text {
 					string ["Rotation"]
-					fontStyle FontStyle {
+					fontStyle DEF textStyle FontStyle {
 						justify "MIDDLE"
+						size 0.4
 					}
 				}
 			}
@@ -137,18 +207,16 @@ Transform {
 }
 
 Transform {
-	translation 7.0 -5.0 0.0
+	translation 3.0 0.0 8.0
 	children [
 		USE button
 		Transform {
-			translation 0.0 0.0 0.01
+			translation 0.0 -0.2 0.01
 			children Shape {
 				appearance USE textColor
 				geometry Text {
 					string ["Scale"]
-					fontStyle FontStyle {
-						justify "MIDDLE"
-					}
+					fontStyle USE textStyle
 				}
 			}
 		}
