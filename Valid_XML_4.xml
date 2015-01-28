@@ -3,15 +3,47 @@
 <?xml-stylesheet type="text/xsl" href="HTML_Transformation_2.xsl"?>
 
 <aircraft-carrier engine = "diesel" class = "Yorktown-class" years-of-service = "1938-1947">
-	<name>USS Enterprise (CV-6)</name>
+	<name>USS „Ентърпрайз“ (CV-6)</name>
 	<personel>
-		<soldier id = "s1" mission = "m1">
-			<first-name>Chester</first-name>
-			<last-name>Nimitz</last-name>
-			<gender>male</gender>
+		<soldier id = "s1" mission = "m1 m2 m3">
+			<first-name>Честър</first-name>
+			<last-name>Нимитц</last-name>
+			<gender>мъж</gender>
+			<position>адмирал на флоата</position>
+			<age>57</age>
+			<religion>християнин</religion>
+		</soldier>
+		<soldier id = "s2" mission = "m1">
+			<first-name>Франк</first-name>
+			<last-name>Флетчър</last-name>
+			<gender>мъж</gender>
 			<position>адмирал</position>
 			<age>57</age>
-			<religion>Christian</religion>
+			<religion>християнин</religion>
+		</soldier>
+		<soldier id = "s3" mission = "m1">
+			<first-name>Реймънд</first-name>
+			<last-name>Шпруанс</last-name>
+			<gender>мъж</gender>
+			<position>адмирал</position>
+			<age>56</age>
+			<religion>християнин</religion>
+		</soldier>
+		<soldier id = "s4" mission = "m1">
+			<first-name>Марк</first-name>
+			<last-name>Митчър</last-name>
+			<gender>мъж</gender>
+			<position>адмирал</position>
+			<age>55</age>
+			<religion>християнин</religion>
+		</soldier>
+		<soldier id = "s5" mission = "m1">
+			<first-name>Томас</first-name>
+			<last-name>Кинкейд</last-name>
+			<gender>мъж</gender>
+			<position>адмирал</position>
+			<age>54</age>
+			<religion>християнин</religion>
 		</soldier>
 	</personel>
 	<aircrafts>
@@ -58,7 +90,21 @@
 			<units-lost></units-lost>
 		</mission>
 		<mission id="m3">
-			<code-name>Battle of the Santa Cruz Islands</code-name>
+			<code-name>Битката при островите Санта Круз</code-name>
+			<countries>
+				<country continent="asia">
+					<country-name>Съединени американски щати</country-name>
+					<population>313 милиона</population>
+				</country>
+			</countries>
+			<duration>три дни</duration>
+			<description>
+				Битката при атола Мидуей се състои на 4 юни 1942 година и е една от най-значителните морски битки на Втората световна война. Флотът на САЩ побеждава обединения флот на Япония, който атакува атола Мидуей. Битката бележи повратен момент във войната в Тихия океан. Обединеният флот на Япония губи 4 тежки самолетоносача, 250 самолета и най-добрите си пилоти, с което загубва възможностите си да действа извън зоната на прикритие на бреговата авиация.
+			</description>
+			<units-lost></units-lost>
+		</mission>
+		<mission id="m4">
+			<code-name>Битката за Иво Джима</code-name>
 			<countries>
 				<country continent="asia">
 					<country-name>Съединени американски щати</country-name>

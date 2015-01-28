@@ -5,6 +5,14 @@ body {
 	background-size: cover !important;
 }
 
+h1 {
+	margin: 0px;
+}
+
+h2 {
+	margin: 0xp;
+}
+
 #main-wrapper {
 	position: absolute;
 	width: 50%;
@@ -52,10 +60,17 @@ body {
 }
 
 .element-wrapper h2 {
+	margin: 0px;
 	margin-top: 0px;
 	margin-left: 190px;
+	padding: 0px;
 }
 
 .element-wrapper ul {
+	margin-left: 190px;
+}
+
+.admirals {
+	font-size: 10pt;
 	margin-left: 190px;
 }
