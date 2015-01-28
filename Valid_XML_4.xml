@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE aircraft-carrier SYSTEM "AircraftCarrier.dtd">
+<?xml-stylesheet type="text/xsl" href="HTML_Transformation_2.xsl"?>
+
+<aircraft-carrier engine = "diesel" class = "Yorktown-class" years-of-service = "1938-1947">
+	<name>USS Enterprise (CV-6)</name>
+	<personel>
+		<soldier id = "s1" mission = "m1">
+			<first-name>Chester</first-name>
+			<last-name>Nimitz</last-name>
+			<gender>male</gender>
+			<position>адмирал</position>
+			<age>57</age>
+			<religion>Christian</religion>
+		</soldier>
+	</personel>
+	<aircrafts>
+		<aircraft id = "a4" control = "pilot" role = "fighter">
+			<model>F-15 Eagle</model>
+			<manufacturer>
+				<manufacturer-name>McDonnell Douglas</manufacturer-name>
+				<established>28 April 1967</established>
+				<staff-count>50000</staff-count>
+				<profit>US$ 20.30 billion</profit>
+			</manufacturer>
+			<cost>28 million USD</cost>
+			<range>1967 km</range>
+		</aircraft>
+	</aircrafts>
+	<missions>
+		<mission id="m1">
+			<code-name>Pearl Harbor</code-name>
+			<countries>
+				<country continent="asia">
+					<country-name>Съединени американски щати</country-name>
+					<population>313 милиона</population>
+				</country>
+			</countries>
+			<duration>един ден</duration>
+			<description>Нападението над Пърл Харбър е изненадваща въздушна атака на японския Императорски флот срещу американската военноморска база при Пърл Харбър, Хаваи, извършена сутринта на 7 декември 1941 г.
+				Без предварително обявяване на война базата е атакувана от 353 японски бойни самолети, бомбардировачи и торпедоносци на две вълни, изстрелвани от шест самолетоносача. Унищожена е голяма част от американския тихоокеански военноморски флот. Поради това през следващите месеци японците има пълно надмощие в Тихия океан. Едновременно с атаката започва японската офанзива срещу британските и холандските колонии в Югоизточна Азия, с което Втората световна война става фактически глобална война. Атаката над Пърл Харбър е битка, при която самолетоносачите и линейните кораби са доминиращият елемент.
+				Атаката е повратна точка в развоя на Втората световна война, тъй като става повод за влизането на САЩ, която да този момент е неутрална, във войната. Въпреки, че атаката причинява на САЩ значителни военни загуби, тя се оказва с фатални последствия за Япония. На следващия ден (8 декември) САЩ обявява война на Япония.
+			</description>
+			<units-lost></units-lost>
+		</mission>
+		<mission id="m2">
+			<code-name>Битка при Мидуей</code-name>
+			<countries>
+				<country continent="asia">
+					<country-name>Съединени американски щати</country-name>
+					<population>313 милиона</population>
+				</country>
+			</countries>
+			<duration>три дни</duration>
+			<description>
+				Битката при атола Мидуей се състои на 4 юни 1942 година и е една от най-значителните морски битки на Втората световна война. Флотът на САЩ побеждава обединения флот на Япония, който атакува атола Мидуей. Битката бележи повратен момент във войната в Тихия океан. Обединеният флот на Япония губи 4 тежки самолетоносача, 250 самолета и най-добрите си пилоти, с което загубва възможностите си да действа извън зоната на прикритие на бреговата авиация.
+			</description>
+			<units-lost></units-lost>
+		</mission>
+		<mission id="m3">
+			<code-name>Battle of the Santa Cruz Islands</code-name>
+			<countries>
+				<country continent="asia">
+					<country-name>Съединени американски щати</country-name>
+					<population>313 милиона</population>
+				</country>
+			</countries>
+			<duration>три дни</duration>
+			<description>
+				Битката при атола Мидуей се състои на 4 юни 1942 година и е една от най-значителните морски битки на Втората световна война. Флотът на САЩ побеждава обединения флот на Япония, който атакува атола Мидуей. Битката бележи повратен момент във войната в Тихия океан. Обединеният флот на Япония губи 4 тежки самолетоносача, 250 самолета и най-добрите си пилоти, с което загубва възможностите си да действа извън зоната на прикритие на бреговата авиация.
+			</description>
+			<units-lost></units-lost>
+		</mission>
+	</missions>
+</aircraft-carrier>

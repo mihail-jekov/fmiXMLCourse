@@ -5,16 +5,16 @@
 	<xsl:output method="html" version="1.0" encoding="UTF-8" />
 	
 	<xsl:template name="airplanes-list">
-		<xsl:for-each select="/aircraft-carrier/aircrafts/aircraft">
+		<xsl:for-each select="/aircraft-carrier/missions/mission">
+			<xsl:variable name="mission_id" select="@id" />
 			<div class="element-wrapper">
-				<img class="airplane-image" src="images/{@id}.jpg" />
-				<h2><xsl:value-of select="model" /></h2>
-				<ul>
-					<li>Роля: <xsl:value-of select="@role" /></li>
-					<li>Цена: <xsl:value-of select="cost" /></li>
-					<li>Обхват: <xsl:value-of select="range" /></li>
-					<li>Производител: <xsl:value-of select="manufactuer/name" /></li>
-				</ul>
+				<span>Адмирали: </span>
+				<xsl:for-each select="/*/*/soldier">
+					<xsl:if test="contains(@mission, $mission_id) and current()/position = 'адмирал'">
+						<span><xsl:value-of select="current()/first-name" />&#160;<xsl:value-of select="current()/last-name" /></span>
+					</xsl:if>
+				</xsl:for-each>
+				<xsl:value-of select="count(/aircraft-carrier/soldiers/soldier[@mission])" />
 			</div>
 		</xsl:for-each>
 	</xsl:template>

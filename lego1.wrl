@@ -1,0 +1,210 @@
+#VRML V2.0 utf8
+
+DEF Brick Transform {
+	children [
+		Transform {
+			translation 0.0 1.4 0.0
+			children [
+				DEF Side Group {
+					children [
+						DEF QuarterSide Group
+						{
+							children [
+								DEF QuarterTube Shape {
+									appearance DEF shapeColor Appearance {
+										material Material {
+										#	transparency 0.5
+											diffuseColor 1 1 1
+										}
+									}
+									geometry Extrusion {
+										creaseAngle 1.5707
+										convex FALSE
+										crossSection [
+											1.000  0.000,   0.920 -0.380,
+											0.710 -0.710,   0.380 -0.920,
+											0.000 -1.000,   0.000 -0.750,
+											0.285 -0.691,	0.533 -0.533,
+											0.691 -0.285,	0.750  0.000,
+											1.000  0.000
+										]
+										spine [
+											0.000 0.000 0.000
+											0.000 0.700 0.000
+										]
+									}
+								}
+								DEF QuarterPlate Shape {
+									appearance USE shapeColor
+									geometry Extrusion {
+										creaseAngle 1.5707
+										convex FALSE
+										crossSection [
+											0.000 -0.850, 0.324 -0.786,
+											0.606 -0.606, 0.786 -0.324,
+											0.850  0.000, 1.500  0.000,
+											1.500 -1.500, 0.000 -1.500,
+											0.000 -0.850
+										]
+										spine [
+											0.000 0.000 0.000
+											0.000 0.100 0.000
+										]
+									}
+								}
+							]
+						}
+						Transform {
+							rotation 0.0 1.0 0.0 1.5707
+							children USE QuarterSide
+						}
+						Transform {
+							rotation 0.0 1.0 0.0 3.1415
+							children USE QuarterSide
+						}
+						Transform {
+							rotation 0.0 1.0 0.0 4.7122
+							children USE QuarterSide
+						}
+					]
+				}
+			]
+		}
+
+		Transform {
+			translation 0.0 -1.4 0.0
+			rotation	0.0 0.0 1.0 -3.1415
+			children USE Side
+		}
+
+		Transform {
+			translation 1.4 0.0 0.0
+			rotation	0.0 0.0 1.0 -1.5707
+			children USE Side
+		}
+
+		Transform {
+			translation -1.4 0.0 0.0
+			rotation	0.0 0.0 1.0 1.5707
+			children USE Side
+		}
+
+		Transform {
+			translation 0.0 0.0 1.4
+			rotation	1.0 0.0 0.0 1.5707
+			children USE Side
+		}
+
+		Transform {
+			translation 0.0 0.0 -1.4
+			rotation	1.0 0.0 0.0 -1.5707
+			children USE Side
+		}
+	]
+}
+
+Transform {
+	translation -7.0 -5.0 0.0
+	children [
+		DEF button Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 0.5 0.5 0.5
+				}
+			}
+			geometry Box {
+				size 5.0 2.0 0.0
+			}
+		}
+		Transform {
+			translation 0.0 0.0 0.01
+			children Shape {
+				appearance DEF textColor Appearance {
+					material Material {
+						diffuseColor 0 0 0
+					}
+				}
+				geometry Text {
+					string ["Rotation"]
+					fontStyle FontStyle {
+						justify "MIDDLE"
+					}
+				}
+			}
+		}
+		DEF touchRotateButton TouchSensor {}
+	]
+}
+
+Transform {
+	translation 7.0 -5.0 0.0
+	children [
+		USE button
+		Transform {
+			translation 0.0 0.0 0.01
+			children Shape {
+				appearance USE textColor
+				geometry Text {
+					string ["Scale"]
+					fontStyle FontStyle {
+						justify "MIDDLE"
+					}
+				}
+			}
+		}
+		DEF touchScaleButton TouchSensor {}
+	]
+}
+
+DEF timeSensor TimeSensor {
+	cycleInterval 2
+	loop TRUE
+	enabled FALSE
+}
+
+DEF scaleTimeSensor TimeSensor {
+	cycleInterval 2
+	loop TRUE
+	enabled FALSE
+}
+
+DEF orientationInterpolator OrientationInterpolator {
+	key [ 0 0.5 1 ]
+	keyValue [ 	1 0 0 3.14,
+				0 1 0 2.355, # rotate right
+				0 0 1 3.14] # rotate down
+}
+
+DEF scaleInterpolator PositionInterpolator {
+	key [0 0.5 1]
+	keyValue [1 1 1
+			3 3 3
+			1 1 1]
+}
+
+
+ROUTE touchRotateButton.isActive TO timeSensor.enabled
+ROUTE timeSensor.fraction_changed TO orientationInterpolator.set_fraction
+ROUTE orientationInterpolator.value_changed TO Brick.set_rotation
+
+ROUTE touchScaleButton.isActive TO scaleTimeSensor.enabled
+ROUTE scaleTimeSensor.fraction_changed TO scaleInterpolator.set_fraction
+ROUTE scaleInterpolator.value_changed TO Brick.scale
+
+DirectionalLight {
+	on TRUE
+	intensity 1
+	ambientIntensity 0
+	color 1 1 1
+	direction 0 -1 -1
+}
+
+Background {
+	skyColor [	0 1 1
+				0 0.8 0.8]
+}
+
+Viewpoint {
+	fieldOfView 0.785398
+	position 0 0 15
+}

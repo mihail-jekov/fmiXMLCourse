@@ -30,7 +30,7 @@
       <!ELEMENT range (#PCDATA)>
 	  <!ELEMENT cost (#PCDATA)>
   <!ELEMENT missions (mission*)>
-    <!ELEMENT mission (code-name, countries, duration, resources-used, units-lost)>
+    <!ELEMENT mission (code-name, countries, duration, description, units-lost)>
 	  <!ATTLIST mission id ID #REQUIRED>
       <!ELEMENT code-name (#PCDATA)>
       <!ELEMENT countries (country+)>
@@ -39,5 +39,5 @@
           <!ELEMENT country-name (#PCDATA)>
 		  <!ELEMENT population (#PCDATA)>
       <!ELEMENT duration (#PCDATA)>
-	  <!ELEMENT resources-used (#PCDATA)>
+	  <!ELEMENT description (#PCDATA)>
 	  <!ELEMENT units-lost (#PCDATA)>

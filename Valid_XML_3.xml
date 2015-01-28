@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE aircraft-carrier SYSTEM "AircraftCarrier.dtd">
+<?xml-stylesheet type="text/xsl" href="HTML_Transformation_1.xsl"?>
+
+<aircraft-carrier engine = "nuclear" class = "Charles de Gaulle" years-of-service = "2001-present">
+	<name>Charles de Gaulle</name>
+	<personel>
+		<soldier id = "s1" aircraft = "a4">
+			<first-name>Takijiro</first-name>
+			<last-name>Ohnishi</last-name>
+			<gender>male</gender>
+			<position>General</position>
+			<age>36</age>
+			<religion>Shinto</religion>
+		</soldier>
+	</personel>
+	<aircrafts>
+		<aircraft id = "a4" control = "pilot" role = "fighter">
+			<model>Rafale</model>
+			<manufacturer>
+				<manufacturer-name>Dassault Aviation</manufacturer-name>
+				<established>1929</established>
+				<staff-count>11600</staff-count>
+				<profit>487 милиона</profit>
+			</manufacturer>
+			<cost>74 милиона евро</cost>
+			<range>3700 км</range>
+		</aircraft>
+		<aircraft id = "a5" control = "pilot" role = "bomber">
+			<model>Super Étendard</model>
+			<manufacturer>
+				<manufacturer-name>Dassault Aviation</manufacturer-name>
+				<established>1929</established>
+				<staff-count>11600</staff-count>
+				<profit>487 милиона</profit>
+			</manufacturer>
+			<cost>12 милиона долара</cost>
+			<range>1820 километра</range>
+		</aircraft>
+		<aircraft id = "a6" control = "pilot" role = "bomber">
+			<model>F-22 Raptor</model>
+			<manufacturer>
+				<manufacturer-name>Lockheed Martin</manufacturer-name>
+				<established>1995</established>
+				<staff-count>116000</staff-count>
+				<profit>$2.981 милярда</profit>
+			</manufacturer>
+			<cost>150 милиона долара</cost>
+			<range>2960 км</range>
+		</aircraft>
+		<aircraft id = "a7" control = "pilot" role = "bomber">
+			<model>E-2 Hawkeye</model>
+			<manufacturer>
+				<manufacturer-name>Northrop Grumman</manufacturer-name>
+				<established>1994</established>
+				<staff-count>68100</staff-count>
+				<profit>1.952 милярда</profit>
+			</manufacturer>
+			<cost>176 милиона долара</cost>
+			<range>2708 км</range>
+		</aircraft>
+		<aircraft id = "a8" control = "pilot" role = "bomber">
+			<model>SA 365 Dauphin 2</model>
+			<manufacturer>
+				<manufacturer-name>Airbus Helicopters</manufacturer-name>
+				<established>1992</established>
+				<staff-count>23000</staff-count>
+				<profit>$6.3 милярда</profit>
+			</manufacturer>
+			<cost>10 милиона долара</cost>
+			<range>827 км</range>
+		</aircraft>
+		<aircraft id = "a9" control = "pilot" role = "bomber">
+			<model>EC 725 Super Cougar</model>
+			<manufacturer>
+				<manufacturer-name>Airbus Helicopters</manufacturer-name>
+				<established>1992</established>
+				<staff-count>23000</staff-count>
+				<profit>$6.3 милярда</profit>
+			</manufacturer>
+			<cost>24.5 милиона долара</cost>
+			<range>857 км</range>
+		</aircraft>
+	</aircrafts>
+	<missions>
+		
+	</missions>
+</aircraft-carrier>

@@ -34,6 +34,7 @@ body {
 	width: 100%;
 	top: 170px;
 	bottom: 40px;
+	overflow: auto;
 }
 
 .airplane-image {
@@ -41,6 +42,8 @@ body {
 	width: 150px;
 	position: absolute;
 	opacity: 1 !important;
+	left: 20px;
+	margin-top: 20px;
 }
 
 .element-wrapper {
@@ -50,5 +53,9 @@ body {
 
 .element-wrapper h2 {
 	margin-top: 0px;
-	margin-left: 160px;
+	margin-left: 190px;
+}
+
+.element-wrapper ul {
+	margin-left: 190px;
 }
